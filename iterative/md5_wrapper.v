@@ -1,4 +1,4 @@
-module fmax_wiring (clk, rst_n, start, sel, out, done);
+module md5_wrapper (clk, rst_n, start, sel, out, done);
 input clk, rst_n, start;
 input sel;
 output [0:127] out;

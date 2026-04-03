@@ -24,7 +24,11 @@ simulation/
 # document files
 *.pdf
 *.png
+
+# python code
 *.py
+*.pyw
+__pycache__/
 
 # unwanted tb_ files
 tb_*.sv

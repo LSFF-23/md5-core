@@ -3,7 +3,7 @@ module md5_top (
     input [511:0] msg,
     input msg_valid,
     output [127:0] hash,
-    output  hash_valid
+    output hash_valid
 );
 
 reg [31:0] K [0:63];
@@ -67,8 +67,8 @@ wire [31:0] C_final = pipeline_net[64][63:32]  + hash_pipe[64][63:32];
 wire [31:0] D_final = pipeline_net[64][31:0]   + hash_pipe[64][31:0];
 
 assign hash[127:96] = {A_final[7:0], A_final[15:8], A_final[23:16], A_final[31:24]};
-assign hash[95:64]  = {B_final[7:0], B_final[15:8], B_final[23:16], B_final[31:24]};
-assign hash[63:32]  = {C_final[7:0], C_final[15:8], C_final[23:16], C_final[31:24]};
-assign hash[31:0]   = {D_final[7:0], D_final[15:8], D_final[23:16], D_final[31:24]};
+assign hash[95:64] = {B_final[7:0], B_final[15:8], B_final[23:16], B_final[31:24]};
+assign hash[63:32] = {C_final[7:0], C_final[15:8], C_final[23:16], C_final[31:24]};
+assign hash[31:0] = {D_final[7:0], D_final[15:8], D_final[23:16], D_final[31:24]};
 
 endmodule
