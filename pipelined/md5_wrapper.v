@@ -2,7 +2,7 @@ module md5_wrapper (
     input clk,
     input [31:0] data_in,
     input start,
-    output reg [31:0] data_out
+    output reg [127:0] data_out
 );
 
 reg [511:0] msg_reg;
