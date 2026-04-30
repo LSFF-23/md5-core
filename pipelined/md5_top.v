@@ -19,7 +19,6 @@ end
 reg [511:0] msg_pipe [0:63];
 integer j;
 always @(posedge clk) begin
-    j = 32'bx;
     msg_pipe[0] <= msg;
     for (j = 0; j < 63; j = j + 1)
         msg_pipe[j+1] <= msg_pipe[j];
@@ -28,7 +27,6 @@ end
 reg [127:0] hash_pipe [0:64];
 integer k;
 always @(posedge clk) begin
-    k = 32'bx;
     hash_pipe[0] <= {32'h67452301, 32'hEFCDAB89, 32'h98BADCFE, 32'h10325476};
     for (k = 0; k < 64; k = k + 1)
         hash_pipe[k+1] <= hash_pipe[k];
